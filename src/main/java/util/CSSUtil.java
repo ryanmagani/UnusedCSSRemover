@@ -4,6 +4,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+/*
+ * order matters
+ * duplicates are okay
+ * empty decs are okay
+ * 
+ * so basically:
+ * don't change the file at all, just get everything in order in a way that's
+ * easy to remove things
+ * 
+ * regex for finding comments
+ * (?s)\/\*.*?\*\/
+ */
+
 public class CSSUtil
 {
 
