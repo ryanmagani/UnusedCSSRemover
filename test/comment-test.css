@@ -1,0 +1,31 @@
+/*tests all types of valid comments, run with empty.txt*/
+/* single line comment */
+/*
+multi line comment
+*/
+/*
+comment
+across
+multi
+lines
+*/
+/*starting on the same line
+*/
+/*
+ending on the same line*/
+/*multiple comments*//*in one line*/
+/*comment with { } in it*/
+/* also with } {*/
+/*
+a {
+	color: blue;
+}
+*/
+/*comment before code*/b/*comments in code*/{/*comments in code*/
+	/*comments
+	in
+	code*/
+	/*comments in code*/color: red;/*comments in code*/
+	/*comments in code*/
+/*comments in code*/}/*comment after code*/
+/* partial /*comment in comment /**/

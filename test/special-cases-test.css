@@ -1,0 +1,4 @@
+/*tests: dupe, selector is at start of file, selector contained within another selector, selector
+contained in the declaration of another selector
+run with special-cases-test.txt*/
+b,html{color:red}a,b,html{color:red;}b,html{color:red;}div{b,html:red;}

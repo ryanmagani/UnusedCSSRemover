@@ -1,0 +1,17 @@
+/*tests: newlines collapsed throughout
+run with: empty.txt*/
+a,
+b
+{
+color:
+red;
+}
+html 
+div
+{
+color:
+blue;
+}
+span .right {
+	color: green;
+}

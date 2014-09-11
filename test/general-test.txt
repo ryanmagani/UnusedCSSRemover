@@ -1,0 +1,17 @@
+ol, div, span
+body > div
+body + div
+body ~ div
+body div
+@media
+body
+#bob
+ol > div#bob > span.div
+a:hover
+p::first-letter
+a[target="_blank"]
+[title~="flower"][class|="top"][class$="top"][class^="top"]
+[class|="top"]
+[class$="top"]
+[class^="top"]
+[class*="top"]

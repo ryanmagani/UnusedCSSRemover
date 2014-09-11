@@ -1,0 +1,4 @@
+/*tests: empty selector at beginning is removed, empty selectors removed, nested but empty removed,
+nested with one empty and one not removes empty only
+run with empty.txt*/
+div{}span{}@media print{.plan{}span{}}#not-empty{color:red;}a{}@media not-empty{empty{}notempty{color:blue;}}b{}
