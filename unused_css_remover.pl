@@ -2,15 +2,15 @@
 #
 use strict;
 use warnings;
-#perl -pi -e 's/\n//g' bootstrap.css						remove linebreaks
+#perl -pi -e 's/\n//g' bootstrap.css												remove linebreaks
 #	\n 				new line
 
-#perl -pi -e 's/\/\*.*?\*\///g' bootstrap.css				remove comments
+#perl -pi -e 's/\/\*.*?\*\///g' bootstrap.css										remove comments
 #	\/\*			/*
 #	.*?				any char until the first
 #	\*\/			*/
 
-#perl -pi -e 's/((?<=\})|^)\s*<SELECTOR>\s*\{.*?\}//g' 	bootstrap.css	remove selector
+#perl -pi -e 's/((?<=\})|^)\s*<SELECTOR>\s*\{.*?\}//g' 	bootstrap.css				remove selector
 #	((?<=\})|^) 	before the match exists either } or the start of the string
 #	\s*				any whitespace
 #	<SELECTOR>		the selector to find
@@ -19,7 +19,7 @@ use warnings;
 #	.*?				any char until the first
 #	\}				}
 
-#perl -pi -e 's/[^\{\}]*\{\s*\}//g' bootstrap.css 			emove any empty selectors, run twice
+#perl -pi -e 's/[^\{\}]*\{\s*\}//g' bootstrap.css 									remove any empty selectors, run twice
 #	[^\{\}]*		any char that isn't { or } until
 #	\{				{
 #	\s*				any whitespace until
@@ -36,6 +36,4 @@ use warnings;
 # issues this will cause:
 # 	comments will be lost 
 #	linebreaks will be lost
-#	random spacing will be lost (but not in selectors assuming it's valid CSS)
 #	won't handle invalid css at all
-#	hard to auto-test
