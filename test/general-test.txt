@@ -15,3 +15,8 @@ a[target="_blank"]
 [class$="top"]
 [class^="top"]
 [class*="top"]
+li
+span
+ul
+.right
+a
