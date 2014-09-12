@@ -4,6 +4,9 @@
 	# file, it is therefore recommended to run this script when minifying/compressing the file
 # This script is not a comprehensive minifier or compressor
 # This script makes no guarantees for syntactically incorrect CSS files
+# Attempting to remove a selector with nested elements (essentially the @media tag) will not
+	# work properly, however, if all of the child selectors are removed from the parent, then the
+	# parent will be removed
 
 # Usage:
 # ./unused_css_remover.pl [Original CSS File] [Text file] [New CSS File]
