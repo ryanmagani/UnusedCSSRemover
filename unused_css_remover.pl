@@ -45,7 +45,7 @@ $cssContent =~ s/\/\*.*?\*\///g;
 foreach (@selectors)
 {
 	# see end of file
-	$cssContent =~ s/((?<=\})|^)\s*\Q$_\E\s*\{.*?\}//g;
+	$cssContent =~ s/((?<=\})|(?<=\{)|^)\s*\Q$_\E\s*\{.*?\}//g;
 }
 
 # Remove all empty selectors (any selector with only whitespace between it's curly braces)
@@ -66,8 +66,8 @@ write_file("$newCSS", "$cssContent");
 #	.*?				any char until the first
 #	\*\/			*/
 
-# s/((?<=\})|^)\s*<SELECTOR>\s*\{.*?\}//g				remove selector
-#	((?<=\})|^) 	before the match exists either } or the start of the string
+# s/((?<=\})|(?<=\{)|^)\s*<SELECTOR>\s*\{.*?\}//g				remove selector
+#	((?<=\})|(?<=\{)|^) 	before the match exists either }, { or the start of the string
 #	\s*				any whitespace
 #	<SELECTOR>		the selector to find
 #	\s*				any whitespace until
