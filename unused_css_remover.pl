@@ -7,6 +7,7 @@
 # Attempting to remove a selector with nested elements (essentially the @media tag) will not
 	# work properly, however, if all of the child selectors are removed from the parent, then the
 	# parent will be removed
+# Single-line CSS-style comments are allowed in the text file, but multi-line are not
 
 # Usage:
 # ./unused_css_remover.pl [Original CSS File] [Text file] [New CSS File]
