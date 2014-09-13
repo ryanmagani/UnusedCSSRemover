@@ -16,7 +16,6 @@
 
 use strict;
 use warnings;
-use File::Copy qw(copy);
 use File::Slurp;
 
 # If there aren't 3 arguments, die
@@ -34,10 +33,14 @@ my $newCSS = $ARGV[2];
 # Read the CSS contents
 my $cssContent = read_file("$cssFileName");
 
-# Read the text contents into an array
-my @selectors = read_file("$txtFileName");
-# Remove new lines
-chomp @selectors;
+# Read the text contents into a string
+my $txtContent = read_file("$txtFileName");
+
+# Remove comments from CSS - see end of file
+$txtContent =~ s/\/\*.*?\*\///g;
+
+# Split the text into an array of selectors
+my @selectors = split("\n", $txtContent);
 
 # Remove new lines from CSS - see end of file
 $cssContent =~ s/\n//g;
@@ -69,10 +72,10 @@ write_file("$newCSS", "$cssContent");
 #	.*?				any char until the first
 #	\*\/			*/
 
-# s/((?<=\})|(?<=\{)|^)\s*<SELECTOR>\s*\{.*?\}//g				remove selector
+# s/((?<=\})|(?<=\{)|^)\s*\Q$_\E\s*\{.*?\}//g				remove selector
 #	((?<=\})|(?<=\{)|^) 	before the match exists either }, { or the start of the string
 #	\s*				any whitespace
-#	<SELECTOR>		the selector to find
+#	\Q$_\E			the selector to find ($_) wrapped in \Q\E literal string quotes
 #	\s*				any whitespace until
 #	\}				{
 #	.*?				any char until the first
